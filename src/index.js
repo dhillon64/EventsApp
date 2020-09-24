@@ -5,11 +5,21 @@ import "./app/layout/styles.css";
 import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { devToolsEnhancer } from "redux-devtools-extension";
+import reducers from "./features/events/reducers";
+import ScrollToTop from "./app/layout/ScrollToTop";
+
+const store = createStore(reducers, devToolsEnhancer());
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <ScrollToTop />
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 

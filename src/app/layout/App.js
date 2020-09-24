@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import EventDashboard from "../../features/events/eventDashboard/EventDashboard";
 import EventDetailedPage from "../../features/events/eventDetailed/EventDetailedPage";
@@ -8,6 +8,8 @@ import HomePage from "../../features/Home/HomePage";
 import EventForm from "../../features/events/eventForm/EventForm";
 
 const App = () => {
+  const { key } = useLocation();
+
   return (
     <Fragment>
       <Route path="/" exact component={HomePage} />
@@ -23,6 +25,7 @@ const App = () => {
                 path={["/createEvent", "/manage/:id"]}
                 exact
                 component={EventForm}
+                key={key}
               />
             </Container>
           </Fragment>

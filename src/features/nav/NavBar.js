@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { Menu, Container, Button } from "semantic-ui-react";
 import SignedInMenu from "./signedInMenu";
 import SignedOutMenu from "./signedOutMenu";
@@ -28,7 +28,8 @@ const NavBar = ({ setFormOpen }) => {
         {authenticated && (
           <Menu.Item as={NavLink} to="/createEvent">
             <Button
-              onClick={() => setFormOpen(true)}
+              as={Link}
+              to="/createEvent"
               positive
               inverted
               content="Create Event"
