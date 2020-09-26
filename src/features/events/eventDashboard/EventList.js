@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import EventListItem from "./EventListItem";
+import TestPlaceInput from "../../sandbox/testPlaceInput";
 
 const EventList = (props) => {
   const { events } = props;
