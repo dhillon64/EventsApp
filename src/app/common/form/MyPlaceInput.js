@@ -50,7 +50,7 @@ export default function MyPlaceInput({ label, options, ...props }) {
               style={{
                 marginTop: 0,
                 position: "absolute",
-                zindex: 1000,
+                zIndex: 1000,
                 width: "100%",
               }}
             >
